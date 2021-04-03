@@ -34,7 +34,11 @@ struct ContentView: View {
                 .padding(.leading, 25.0)
                 .frame(height: 350)
             }
-            .padding(.top, 40)
+            .padding(.top, 50)
+            
+            BottomCard()
+                .offset(y:1000)
+            
         }
     }
 }
