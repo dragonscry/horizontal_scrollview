@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var CardMove = false
+    
     var body: some View {
         ZStack {
             Color(#colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1))
@@ -22,23 +25,32 @@ struct ContentView: View {
                     .font(.system(size: 35, weight: .bold, design: .rounded))
                     .padding(.top, 4)
             }
-            .offset(y: -250)
+            .offset(y: CardMove ? -300 : -250)
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack (spacing: 20){
                     ForEach(cardData) { item in
-                        Cards(card: item)
-                        .rotationEffect(.degrees(90))
+                        GeometryReader { geometry in
+                            Cards(card: item, CardMove: $CardMove)
+                                .rotation3DEffect(Angle(degrees: Double(geometry.frame(in: .global).minX - 20) / 30), axis: (x: 10, y: -20, z: 0))
+                        }
+                        .frame(width: 375, height: 200)
                     }
                 }
                 .padding(.leading, 25.0)
                 .frame(height: 350)
             }
-            .padding(.top, 50)
+            .padding(.top, CardMove ? -200 : 50)
+            .animation(.spring())
             
             BottomCard()
-                .offset(y:1000)
+                .offset(y: CardMove ? 280 : 1000)
+                .animation(.spring())
             
+        }
+        .animation(.spring())
+        .onTapGesture {
+            self.CardMove = false
         }
     }
 }
@@ -53,6 +65,7 @@ struct ContentView_Previews: PreviewProvider {
 struct Cards: View {
     
     var card: Card
+    @Binding var CardMove: Bool
     
     var body: some View {
         ZStack {
@@ -110,6 +123,11 @@ struct Cards: View {
         }
         .frame(width: 325, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         .cornerRadius(25)
+        .rotationEffect(.degrees(CardMove ? 0 : 90))
+        .animation(.spring())
+        .onTapGesture {
+            self.CardMove = !self.CardMove
+        }
     }
 }
 
