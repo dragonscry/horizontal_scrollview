@@ -11,6 +11,7 @@
 		920B17CC26148B2D003476C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920B17CB26148B2D003476C8 /* ContentView.swift */; };
 		920B17CE26148B36003476C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 920B17CD26148B36003476C8 /* Assets.xcassets */; };
 		920B17D126148B36003476C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 920B17D026148B36003476C8 /* Preview Assets.xcassets */; };
+		920B17DA26187183003476C8 /* BottomCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920B17D926187183003476C8 /* BottomCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		920B17CD26148B36003476C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		920B17D026148B36003476C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		920B17D226148B36003476C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		920B17D926187183003476C8 /* BottomCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				920B17C926148B2D003476C8 /* horizontal_scrollviewApp.swift */,
 				920B17CB26148B2D003476C8 /* ContentView.swift */,
+				920B17D926187183003476C8 /* BottomCard.swift */,
 				920B17CD26148B36003476C8 /* Assets.xcassets */,
 				920B17D226148B36003476C8 /* Info.plist */,
 				920B17CF26148B36003476C8 /* Preview Content */,
@@ -140,6 +143,7 @@
 			files = (
 				920B17CC26148B2D003476C8 /* ContentView.swift in Sources */,
 				920B17CA26148B2D003476C8 /* horizontal_scrollviewApp.swift in Sources */,
+				920B17DA26187183003476C8 /* BottomCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
